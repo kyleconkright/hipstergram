@@ -2,6 +2,7 @@
 
 const express   = require('express');
 const bodyParser = require("body-parser");
+const path = require('path');
 const router    = require('./router/');
 const appRouter = express.Router();
 
@@ -15,10 +16,16 @@ router.route(appRouter);
 app.use(PREFIX, appRouter);
 
 // Create link to Angular build directory
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+app.use(express.static(__dirname + '/dist'));
 
 
 app.listen(PORT, () => {
   console.log(`LISTENING TO ${PREFIX}  ON: ${PORT}! While it's still cool... `);
+});
+
+
+// For all GET requests, send back index.html
+// so that PathLocationStrategy can be used
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
