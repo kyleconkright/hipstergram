@@ -1,6 +1,9 @@
 // server.js
 const express = require('express');
 const bodyParser = require('body-parser');
+const router = require('./router/');
+const appRouter = express.Router();
+
 const app = express();
 // Run the app by serving the static files
 // in the dist directory
