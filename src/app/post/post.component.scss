@@ -1,0 +1,12 @@
+@import '../../styles';
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+}
+
+p {
+    padding: $space $space*2;
+}
