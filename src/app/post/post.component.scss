@@ -4,10 +4,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 100%;
     background: #fafafa;
 }
 
 p {
     padding: $space $space*2;
     color: #ccc;
+    line-height: 0;
 }
