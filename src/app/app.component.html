@@ -1,5 +1,5 @@
 <header>
-  <h1>Hipstergram</h1>
+  <p>Hipstergram</p>
   <ul>
     <li><a href="#">Sign In</a></li>
   </ul>
@@ -8,3 +8,5 @@
 <main>
   <app-post *ngFor="let post of testPosts"></app-post>
 </main>
+
+<app-modal *ngIf="showModal" (toggleModal)="hideModal($event)"></app-modal>
