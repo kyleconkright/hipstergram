@@ -23,16 +23,3 @@
 //   console.log(`LISTENING TO ${PREFIX}  ON: ${PORT}! While it's still cool... `);
 // });
 
-// server.js
-const express = require('express');
-const bodyParser = require('body-parser');
-const router = require('./router/');
-const appRouter = express.Router();
-
-const app = express();
-// Run the app by serving the static files
-// in the dist directory
-app.use(express.static(__dirname + '../dist'));
-// Start the app by listening on the default
-// Heroku port
-app.listen(process.env.PORT || 8080);
