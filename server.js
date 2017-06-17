@@ -1,5 +1,6 @@
 // server.js
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 // Run the app by serving the static files
 // in the dist directory
