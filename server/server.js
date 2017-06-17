@@ -6,7 +6,7 @@ const router    = require('./router/');
 const appRouter = express.Router();
 
 const PREFIX    = '/hipstr-api/';
-const PORT      = process.env.PORT || 4201;
+const PORT      = process.env.PORT || 8080;
 
 const app = express();
 app.use(bodyParser.json());
