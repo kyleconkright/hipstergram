@@ -16,7 +16,8 @@ router.route(appRouter);
 app.use(PREFIX, appRouter);
 
 // Create link to Angular build directory
-app.use(express.static(__dirname + '/dist'));
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 app.listen(PORT, () => {
   console.log(`LISTENING TO ${PREFIX}  ON: ${PORT}! While it's still cool... `);
