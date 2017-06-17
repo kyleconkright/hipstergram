@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 router.route(appRouter);
 app.use(PREFIX, appRouter);
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '../dist'));
 
 app.listen(PORT, () => {
   console.log(`LISTENING TO ${PREFIX}  ON: ${PORT}! While it's still cool... `);
