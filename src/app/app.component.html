@@ -6,7 +6,7 @@
 </header>
 
 <main>
-  <app-post *ngFor="let post of testPosts"></app-post>
+  <app-post *ngFor="let post of testPosts; index as i" [post]="i"></app-post>
 </main>
 
 <app-modal *ngIf="showModal" (toggleModal)="hideModal($event)"></app-modal>
