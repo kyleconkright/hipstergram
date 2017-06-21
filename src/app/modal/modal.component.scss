@@ -1,0 +1,32 @@
+@import '../../styles';
+
+:host {
+    position: fixed;
+    z-index: 9999;
+    top: 25%;
+    bottom: 25%;
+    left: 25%;
+    right: 25%;
+    background: #fff;
+    box-shadow: 0 0 100px #dedede;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: $space*2;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 1.5rem;
+    font-size: 1.25rem;
+    text-align: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #5192CC;
+    font-weight: 400;
+    cursor: pointer;
+}
