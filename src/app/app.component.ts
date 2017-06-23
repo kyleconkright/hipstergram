@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PostComponent } from './post/post.component';
+import { PostComponent } from './posts/post/post.component';
 import { ModalComponent } from './modal/modal.component';
 
 @Component({
@@ -9,11 +9,5 @@ import { ModalComponent } from './modal/modal.component';
 })
 
 export class AppComponent {
-  private testPosts:Array<any> = new Array(45)
-  showModal = true;
-
-  hideModal(val) {
-    this.showModal = val
-  }
 
 }

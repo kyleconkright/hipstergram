@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-post',
@@ -7,13 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  private testPosts: Array<any> = [1, .10];
   @Input() post: String
+  private id;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-
+    this.route.params.subscribe((res) => {
+      this.id = res
+    })
   }
 
 }
