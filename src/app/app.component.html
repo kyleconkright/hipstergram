@@ -1,12 +1,12 @@
 <header>
-  <p>Hipstergram</p>
+  <a class="logo" [routerLink]="['/']">Hipstergram</a>
   <ul>
     <li><a href="#">Sign In</a></li>
   </ul>
 </header>
 
 <main>
-  <app-post *ngFor="let post of testPosts; index as i" [post]="i"></app-post>
+  <router-outlet></router-outlet>
 </main>
 
 <app-modal *ngIf="showModal" (toggleModal)="hideModal($event)"></app-modal>
