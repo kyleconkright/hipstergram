@@ -5,18 +5,24 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { appRoutes } from "app/app-routing.module";
+
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
+import { PostPreviewComponent } from './posts/post-preview/post-preview.component';
 import { ModalComponent } from './modal/modal.component';
-import { appRoutes } from "app/app-routing.module";
+
+import { AppService } from "app/app.service";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     PostComponent,
-    ModalComponent
+    PostPreviewComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,9 @@ import { appRoutes } from "app/app-routing.module";
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

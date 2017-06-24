@@ -1,32 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { PostComponent } from './post/post.component';
+import { Component } from '@angular/core';
+import { PostPreviewComponent } from './post-preview/post-preview.component';
+import { AppService } from "app/app.service";
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss']
 })
-export class PostsComponent implements OnInit {
+export class PostsComponent {
 
-  // private testPosts: Array<any> = new Array(45)
+  constructor(
+    private appService: AppService
+  ) { }
+  
   showModal = true;
+  private testPosts = this.appService.testPosts
 
-  testPosts = [
-    {id: 1, name: 'kyle c'},
-    {id: 2, name: 'dan'},
-    {id: 3, name: 'kyle h'},
-    {id: 4, name: 'kyle c'},
-    {id: 5, name: 'dan'},
-    {id: 6, name: 'kyle h'},
-    {id: 7, name: 'kyle c'},
-    {id: 8, name: 'dan'},
-    {id: 9, name: 'kyle h'},
-  ]
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   hideModal(val) {
     this.showModal = val

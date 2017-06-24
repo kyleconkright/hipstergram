@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
+import { Post } from './post';
+
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -8,8 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class PostComponent implements OnInit {
 
-  @Input() post: String
-  private id;
+  private post: Post = new Post();
 
   constructor(
     private route: ActivatedRoute
@@ -17,7 +18,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((res) => {
-      this.id = res
+      this.post.id = res.id
     })
   }
 
