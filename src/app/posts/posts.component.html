@@ -1,1 +1,5 @@
-<app-post *ngFor="let post of testPosts; index as i" [post]="post"></app-post>
+<div class="post-preview" *ngFor="let post of testPosts">
+    <div class="post-preview-data">
+        <a [routerLink]="{outlets: {post: [post.id]}}">{{ post.name }}</a>
+    </div>
+</div>

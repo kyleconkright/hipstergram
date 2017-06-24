@@ -6,3 +6,29 @@
     grid-gap: $space;
     padding: $space;
 }
+
+div.post-preview {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100%;
+    background: #fafafa;
+    .post-preview-data {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+p {
+    padding: $space $space*2;
+    color: #ccc;
+    line-height: 0;
+}
