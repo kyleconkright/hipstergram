@@ -1,0 +1,5 @@
+<div class="post-preview" *ngFor="let post of testPosts">
+    <div class="post-preview-data">
+        <a [routerLink]="{outlets: {post: [post.id]}}">{{ post.name }}</a>
+    </div>
+</div>
