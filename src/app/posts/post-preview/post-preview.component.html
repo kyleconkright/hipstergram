@@ -1,5 +1,9 @@
 <div class="post">
-  <a [routerLink]="'/'">close</a>
-  <p>this post is by {{post.name}}</p>
+  <a class="close" [routerLink]="'/'">&times;</a>
+  <div class="user">
+    <h4>{{post.username}}</h4>
+    <span class="date">{{ post.createdAt }}</span>
+  </div>
+
   <p>the post id is {{post.id}}</p>
 </div>

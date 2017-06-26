@@ -23,8 +23,7 @@ import { AppService } from "app/app.service";
 })
 export class PostPreviewComponent implements OnInit {
 
-  private post: Post = new Post()
-  private testPosts: Post[] = this.appService.testPosts
+ private post: Post = new Post()
 
   constructor(
     private route: ActivatedRoute,
@@ -32,8 +31,9 @@ export class PostPreviewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe((res) => {
-      this.post = this.testPosts.find((post) => post.id === res.id)
+    this.route.params.subscribe((params) => {
+      this.post = this.appService.posts.find(res => res.id === params.id)
+      console.log(this.post)
     })
   }
 
