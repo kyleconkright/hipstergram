@@ -19,7 +19,7 @@ app.use(cors());
 
 app.use(express.static(__dirname + '/dist'));
 
-mongoose.connect('mongodb://localhost/hipstrgram');
+mongoose.connect(process.env.MONGODB_URI);
 
 var Post = mongoose.model('Post', { username: String, createdAt: Date });
 
