@@ -1,5 +1,8 @@
+
 const db = require('../../db');
 const { User } = db.models;
+const isUniqueId = require('../../utils/idGenerator.js')
+
 
 
 
@@ -8,11 +11,37 @@ module.exports = app => {
 
     })
 
-    app.post('/users/', (req, res) => {
-      const user = req.body;
-      User.create(user)
+    app.get('/users', (req, res) => {
+
+      User.find()
         .then(user => {
           res.json(user)
+        })
+        .catch(err =>
+          res.json({
+            code: 500,
+            message: 'ERROR GETTING USERS',
+            purpose: err.message,
+          })
+        )
+    })
+
+    app.post('/users/', (req, res) => {
+      const user = req.body;
+
+      return isUniqueId(User)
+        .then(id => {
+          user.id = id
+          return Promise.resolve(user);
+        })
+        .then(user => {
+          User.create(user)
+            .then(user => {
+              res.json(user)
+            })
+            .catch(err => {
+              if (err) throw new Error(err.message)
+            })
         })
         .catch(err =>
           res.json({
@@ -36,7 +65,6 @@ module.exports = app => {
             purpose: err.message,
           })
         }
-        console.log('no error >> ')
         res.json(user)
       })
     })

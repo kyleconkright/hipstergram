@@ -1,7 +1,9 @@
 'use strict';
 
 const routes = [
-  require('./routes/user')
+  require('./routes/user'),
+  require('./routes/post'),
+  require('./routes/feed'),
 ];
 
 module.exports = {
